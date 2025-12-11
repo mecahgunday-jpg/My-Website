@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Annela Bistro</title>
+
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+/* ------------------ GLOBAL STYLES ------------------ */
+:root {
+    --white: #fff;
+    --dark: #8a1f00;
+    --primary: #6b0404;
+    --secondary: #b08c5a;
+    --cream-bg: #fdf6f0;
+}
+
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
+body { background: var(--cream-bg); color: var(--dark); line-height: 1.6; padding-top: 85px; }
+ul { list-style:none; }
+a { text-decoration:none; }
+img { width:100%; display:block; }
+
+
+/* ------------------ NAVBAR ------------------ */
+.main-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    background: rgba(107, 4, 4, 0.90);
+    backdrop-filter: blur(6px);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+.navbar {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-logo .logo-text {
+    font-size: 2rem;
+    font-family: "Playfair Display", serif;  /* NEW FONT */
+    color: var(--white);
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+
+.nav-menu {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+
+.nav-menu li a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    color: var(--white);
+    background: var(--secondary);
+    border-radius: 22px;
+    transition: 0.3s ease;
+}
+
+
+.nav-menu li a:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+
+/* ------------------ HERO ------------------ */
+.hero {
+    background-image: url('https://i.pinimg.com/736x/bd/68/e8/bd68e89d8c23d214940457747ceacedd.jpg');
+    background-size: clear;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------ ABOUT ------------------ */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 40px;
+}
+
+
+.about img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+
+/* ------------------ MENU ------------------ */
+.menu-section {
+    padding: 80px 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+.menu-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+
+.menu-sub {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+
+.menu-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+.menu-card:hover {
+    transform: scale(1.03);
+}
+
+
+.menu-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+.menu-info {
+    padding: 20px;
+}
+
+
+.menu-info h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+
+.menu-info ul {
+    list-style: disc inside;
+    margin: 0;
+    font-size: 0.95rem;
+    color: #4a3f35;
+}
+
+
+.menu-info ul li {
+    margin: 6px 0;
+}
+
+
+.category {
+    background: var(--primary);
+    color: var(--white);
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+
+/* ------------------ REVIEWS ------------------ */
+#reviews {
+    padding: 60px 40px;
+}
+
+
+.review {
+    margin-bottom: 30px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* ------------------ ORDER FORM ------------------ */
+#order {
+    padding:60px 20px;
+    background: var(--cream-bg);
+}
+
+
+form {
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+
+form input, form select, form textarea {
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #b8a48b;
+    font-size:1rem;
+}
+
+
+form button {
+    background: var(--primary);
+    color:#fff;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+
+form button:hover {
+    background:#8a1f00;
+}
+
+
+/* ------------------ CONTACT ------------------ */
+.contact {
+    background-color: #eee;
+    padding: 60px 40px;
+}
+
+
+/* ------------------ FOOTER ------------------ */
+footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+<header class="main-header">
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-text">ANNELA BISTRO</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#menu" class="nav-link">Menu</a></li>
+      <li><a href="#reviews" class="nav-link">Reviews</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#order" class="nav-link">Order</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- HERO -->
+<div class="hero">
+    <h1>.</h1>
+</div>
+
+
+<!-- ABOUT -->
+<section id="about" style="display:flex; flex-direction:column; align-items:center; padding:50px 20px; background:#f7f2e9;">
+
+  <!-- Heading -->
+  <h1 style="font-family:'Poppins', sans-serif; font-size:3rem; color:#6b0404; text-align:center; margin-bottom:10px;">
+    Welcome to Annela Bistro
+  </h1>
+  <h2 style="font-family:'Poppins', sans-serif; font-size:1.5rem; color:#6b0404; text-align:center; font-weight:400; margin-bottom:40px;">
+    Where Friends, Food, and Stories Meet.
+  </h2>
+
+  <!-- Story Section with Image -->
+  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; max-width:1200px; gap:40px;">
+    
+    <!-- Image -->
+    <div style="flex:1; min-width:300px; text-align:center;">
+      <img src="https://media.istockphoto.com/id/842419376/photo/young-beautiful-asian-woman-barista-wear-blue-apron-talking-to-customer-at-bar-counter-in.jpg?s=612x612&w=0&k=20&c=OMp9aAr0tdXQlhO-d-Mke_Hswdu6K1I8Se_mDoEpUtk=" alt="Annela Bistro" style="width:100%; max-width:400px; border-radius:15px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+    </div>
+
+     <!-- Text Content -->
+    <div style="flex:1; min-width:300px; font-family:'Poppins', sans-serif; color:#4a3f35; line-height:1.8;">
+      <h3 style="font-size:2rem; color:#6b0404; text-align:center; margin-bottom:20px;">Our Story</h3>
+      <p style="font-size:1.1rem; margin-bottom:20px;">
+        <strong>Annela Bistro</strong> was born from two names <strong>Ann</strong> and <strong>Angela</strong> but the dream behind it grew far beyond a simple combination of letters. It started as a shared vision between two friends who believed that food is more than just something you eat… it’s something that brings people together.
+      </p>
+      <p style="font-size:1.1rem; margin-bottom:20px;">
+        What began as casual conversations over late-night coffee slowly turned into a dream neither of them could ignore. Ann and Angela imagined a place where people could slow down, breathe, and enjoy good food without rushing through life — a place that felt warm, familiar, and welcoming the moment you walked in.
+      </p>
+      <p style="font-size:1.1rem; margin-bottom:20px;">
+        They knew they didn’t want to create just another café or restaurant. They wanted to build a <strong>bistro with heart</strong> — a space where friends could laugh, families could reconnect, and strangers could feel at home. And that vision became <strong>Annela Bistro</strong>.
+      </p>
+    </div>
+  </div>
+
+  <hr style="margin:40px 0; border:0; border-top:2px solid #6b0404; width:50px;">
+
+  <!-- Mission and Vision -->
+  <div style="max-width:800px; text-align:center;">
+    <h3 style="color:#6b0404; margin-bottom:10px;">Mission</h3>
+    <p style="margin-bottom:20px;">To provide a welcoming and memorable dining experience where every dish is prepared with love, creativity, and the freshest ingredients. We aim to be a space where people feel at home, savor unique flavors, and make lasting connections.</p>
+
+    <h3 style="color:#6b0404; margin-bottom:10px;">Vision</h3>
+    <p style="margin-bottom:20px;">To become a beloved community bistro known for its cozy ambiance, heartfelt service, and drinks that inspire warmth, creativity, and connection. We envision Annela Bistro as a place people return to — not just for the food, but for the feeling.</p>
+  </div>
+
+</section>
+
+
+
+<!-- MENU -->
+<section id="menu" class="menu-section">
+    <h2 class="menu-title"> Menu</h2>
+    
+    <div class="menu-grid">
+        <!-- Coffee & Espresso -->
+        <div class="menu-card">
+            <img src="https://cdn.apartmenttherapy.info/image/upload/v1632161228/stock/GettyImages-1270218142.jpg" alt="Coffee & Espresso">
+            <div class="menu-info">
+                <span class="category">Coffee</span>
+                <h3>Coffee & Espresso</h3>
+                <ul>
+                    <li>Espresso Shot - ₱100</li>
+                    <li>Americano - ₱120</li>
+                    <li>Cappuccino - ₱150</li>
+                    <li>Café Latte - ₱150</li>
+                    <li>Vanilla Latte - ₱170</li>
+                    <li>Caramel Latte - ₱170</li>
+                    <li>Mocha Latte - ₱180</li>
+                    <li>Cold Brew - ₱160</li>
+                    <li>Spanish Latte - ₱165</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Non-Coffee -->
+        <div class="menu-card">
+           <img src="https://i.pinimg.com/736x/f3/2e/e1/f32ee1f798790240ca15f0be260923c5.jpg" alt="Non-Coffee Classics">
+            <div class="menu-info">
+                <span class="category">Drinks</span>
+                <h3>Non-Coffee Classics</h3>
+                <ul>
+                    <li>Matcha Latte - ₱170</li>
+                    <li>Iced Matcha - ₱170</li>
+                    <li>Hot Chocolate - ₱150</li>
+                    <li>Chai Latte - ₱160</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Signature Drinks -->
+        <div class="menu-card">
+            <img src="https://i.pinimg.com/1200x/3b/a2/c5/3ba2c5ae61f152bde93c84c22cabb7ea.jpg" alt="Signature Drinks">
+            <div class="menu-info">
+                <span class="category">Drinks</span>
+                <h3>Signature Drinks</h3>
+                <ul>
+                    <li>Hinto Brew - ₱180</li>
+                    <li>Serenity Latte - ₱170</li>
+                    <li>Pause Punch - ₱160</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Pastries & Bites -->
+        <div class="menu-card">
+            <img src="https://magazinebbm.com/assets/img/blog/65bbd9ae-9337-494f-8ba1-c87859797055.jpg" alt="Pastries & Bites">
+            <div class="menu-info">
+                <span class="category">Pastries</span>
+                <h3>Pastries & Bites</h3>
+                <ul>
+                    <li>Chocolate Chip Cookies - ₱60</li>
+                    <li>Classic Cheesecake - ₱150</li>
+                    <li>Banana Bread - ₱80</li>
+                    <li>Croissant (Butter) - ₱90</li>
+                    <li>Croissant (Chocolate) - ₱100</li>
+                    <li>Ham & Cheese Sandwich - ₱150</li>
+                    <li>Chicken Sandwich - ₱160</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Desserts -->
+        <div class="menu-card">
+            <img src="https://pbs.twimg.com/media/G6V87J6aoAAXTGK?format=jpg&name=900x900" alt="Desserts">
+            <div class="menu-info">
+                <span class="category">Desserts</span>
+                <h3>Desserts & Sweets</h3>
+                <ul>
+                    <li>Brownies -- ₱80</li>
+                    <li>Macarons -- ₱60 each</li>
+                    <li>Mini Tarts -- ₱90</li>
+                    <li>Fruit Parfaits -- ₱120</li>
+                    <li>Chocolate Lava Cake -- ₱150</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- REVIEWS -->
+<section id="reviews">
+    <div class="section-content">
+        <h2>Reviews</h2>
+        <div class="review">
+            <div class="review">
+                <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+                <strong>Maria Lopez</strong>
+                <p>"A peaceful escape in the city. Truly my daily pause button!"</p>
+            </div>
+
+
+            <div class="review">
+                <p>⭐ ⭐ ⭐ ⭐</p>
+                <strong>John Santos</strong>
+                <p>"My new daily ritual. Cozy corners and excellent coffee!"</p>
+            </div>
+
+
+            <div class="review">
+                <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+                <strong>Angela Cruz</strong>
+                <p>"I love the calm ambiance and refreshing drinks."</p>
+            </div>
+
+
+            <div class="review">
+                <p>⭐ ⭐ ⭐ ⭐</p>
+                <strong>Mark Dela Cruz</strong>
+                <p>"Best experience. Friendly staff and delicious pastries!"</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- ORDER -->
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Location:</strong> 1508 Makabago Street, Manila, Philippines</p>
+    <p><strong>Phone:</strong> +63 912 345 6789</p>
+    <p><strong>Email:</strong> hello@annelabistro.com</p>
+    <p><strong>Opening Hours:</strong> 10:00 AM – 10:00 PM (Mon–Sun)</p>
+</section>
+
+
+
+
+<section id="order" aria-labelledby="order-title" style="padding:60px 20px; background:#fdf6f0;">
+  <h3 class="section-title" id="order-title" style="text-align:center; font-size:2.5rem; color:#6b0404; margin-bottom:40px;">Order Now</h3>
+
+
+  
+<div class="two-col" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1200px; margin:auto;">
+
+<!-- Order Form -->
+<form id="orderForm" action="https://formspree.io/f/xyzqarjp" method="POST" aria-label="Order form"
+style="background:#fff; padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); display:flex; flex-direction:column; gap:12px;">
+
+    <h2>Place Your Order</h2>
+
+    <label>Full Name</label>
+    <input name="name" type="text" placeholder="Your full name" required>
+
+    <label>Phone Number</label>
+    <input name="phone" type="tel" placeholder="09XX XXX XXXX" required>
+
+    <label>Delivery Address (if delivery)</label>
+    <input name="address" type="text" placeholder="Street, Barangay, City">
+
+    <label>Select Items</label>
+
+    <!-- MENU SELECTION -->
+    <div id="menuList" style="display:flex; flex-direction:column; gap:8px;">
+
+        <!-- Coffee & Espresso -->
+        <strong>☕ Coffee & Espresso</strong>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Espresso Shot</span>
+            <input type="checkbox" class="item" data-name="Espresso Shot" data-price="100">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Americano</span>
+            <input type="checkbox" class="item" data-name="Americano" data-price="120">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Cappuccino</span>
+            <input type="checkbox" class="item" data-name="Cappuccino" data-price="150">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Café Latte</span>
+            <input type="checkbox" class="item" data-name="Café Latte" data-price="150">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Vanilla Latte</span>
+            <input type="checkbox" class="item" data-name="Vanilla Latte" data-price="170">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Caramel Latte</span>
+            <input type="checkbox" class="item" data-name="Caramel Latte" data-price="170">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Mocha Latte</span>
+            <input type="checkbox" class="item" data-name="Mocha Latte" data-price="180">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Cold Brew</span>
+            <input type="checkbox" class="item" data-name="Cold Brew" data-price="160">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Spanish Latte</span>
+            <input type="checkbox" class="item" data-name="Spanish Latte" data-price="165">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        
+        <!-- Non-Coffee Classics -->
+        <strong>🍵 Non-Coffee Classics</strong>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Matcha Latte</span>
+            <input type="checkbox" class="item" data-name="Matcha Latte" data-price="170">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Iced Matcha</span>
+            <input type="checkbox" class="item" data-name="Iced Matcha" data-price="170">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Hot Chocolate</span>
+            <input type="checkbox" class="item" data-name="Hot Chocolate" data-price="150">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Chai Latte</span>
+            <input type="checkbox" class="item" data-name="Chai Latte" data-price="160">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        
+         <!-- Signature Drinks -->
+        <strong>🧊 Signature Drinks</strong>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Hinto Brew</span>
+            <input type="checkbox" class="item" data-name="Hinto Brew" data-price="180">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Serenity Latte</span>
+            <input type="checkbox" class="item" data-name="Serenity Latte" data-price="170">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Pause Punch</span>
+            <input type="checkbox" class="item" data-name="Pause Punch" data-price="160">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        
+        <!-- Pastries & Bites -->
+        <strong>🍰 Pastries & Bites</strong>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Chocolate Chip Cookies</span>
+            <input type="checkbox" class="item" data-name="Chocolate Chip Cookies" data-price="60">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Classic Cheesecake</span>
+            <input type="checkbox" class="item" data-name="Classic Cheesecake" data-price="150">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Banana Bread</span>
+            <input type="checkbox" class="item" data-name="Banana Bread" data-price="80">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Croissant (Butter)</span>
+            <input type="checkbox" class="item" data-name="Croissant (Butter)" data-price="90">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Croissant (Chocolate)</span>
+            <input type="checkbox" class="item" data-name="Croissant (Chocolate)" data-price="100">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Ham & Cheese Sandwich</span>
+            <input type="checkbox" class="item" data-name="Ham & Cheese Sandwich" data-price="150">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Chicken Sandwich</span>
+            <input type="checkbox" class="item" data-name="Chicken Sandwich" data-price="160">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        
+        <!-- Desserts & Sweets -->
+        <strong>🍮 Desserts & Sweets</strong>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Brownies</span>
+            <input type="checkbox" class="item" data-name="Brownies" data-price="80">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Macarons</span>
+            <input type="checkbox" class="item" data-name="Macarons" data-price="60">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Mini Tarts</span>
+            <input type="checkbox" class="item" data-name="Mini Tarts" data-price="90">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Fruit Parfaits</span>
+            <input type="checkbox" class="item" data-name="Fruit Parfaits" data-price="120">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:10px;">
+            <span>Chocolate Lava Cake</span>
+            <input type="checkbox" class="item" data-name="Chocolate Lava Cake" data-price="150">
+            <input type="number" class="itemQty" min="1" value="1" style="width:50px;">
+        </div>
+
+    </div>
+
+    <!-- Order Summary -->
+    <div id="orderSummary" style="margin-top:20px; border-top:1px solid #ccc; padding-top:10px;">
+        <h3>Your Order</h3>
+        <ul id="orderItems" style="list-style:none; padding-left:0;"></ul>
+        <p><strong>Total: ₱<span id="totalPrice">0</span></strong></p>
+    </div>
+
+    <label>Pickup or Delivery</label>
+    <select id="method" name="method" required>
+        <option value="Pickup">Pickup</option>
+        <option value="Delivery">Delivery (+₱60)</option>
+    </select>
+
+    <input type="hidden" id="finalOrder" name="order">
+    <input type="hidden" id="finalTotal" name="total">
+
+    <button type="submit" class="btn" style="margin-top:12px; background:#6b0404; color:#fff; padding:12px; border:none; border-radius:8px; cursor:pointer;">Place Order</button>
+
+    <p id="orderSuccess" class="success-message" style="display:none; color:green; font-weight:600; margin-top:10px;">✅ Your order has been received! We'll contact you.</p>
+
+</form>
+
+
+<script>
+const items = document.querySelectorAll('.item');
+const orderItems = document.getElementById('orderItems');
+const totalPriceEl = document.getElementById('totalPrice');
+
+function updateOrder() {
+    let total = 0;
+    orderItems.innerHTML = '';
+
+    items.forEach(item => {
+        if(item.checked) {
+            const qtyInput = item.nextElementSibling;
+            const qty = qtyInput ? parseInt(qtyInput.value) : 1;
+            const name = item.dataset.name;
+            const price = parseFloat(item.dataset.price);
+            const itemTotal = price * qty;
+            total += itemTotal;
+
+            const li = document.createElement('li');
+            li.textContent = `${name} x ${qty} = ₱${itemTotal}`;
+            orderItems.appendChild(li);
+        }
+    });
+
+    totalPriceEl.textContent = total.toFixed(2);
+}
+
+// Update live on checkbox or quantity change
+items.forEach(item => {
+    item.addEventListener('change', updateOrder);
+    const qtyInput = item.nextElementSibling;
+    if(qtyInput) qtyInput.addEventListener('change', updateOrder);
+});
+
+// Formspree Submit
+const orderForm = document.getElementById('orderForm');
+const orderSuccess = document.getElementById('orderSuccess');
+
+orderForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Prepare hidden inputs for Formspree
+    let orderText = '';
+    orderItems.querySelectorAll('li').forEach(li => {
+        orderText += li.textContent + '\n';
+    });
+    document.getElementById('finalOrder').value = orderText;
+    document.getElementById('finalTotal').value = totalPriceEl.textContent;
+
+    fetch(orderForm.action, {
+        method: "POST",
+        body: new FormData(orderForm),
+        headers: {"Accept":"application/json"}
+    }).then(res => {
+        if (res.ok) {
+            // Show success message
+            orderSuccess.style.display = "block";
+
+            // Hide after 4s
+            setTimeout(() => orderSuccess.style.display = "none", 4000);
+
+            // Reset form and order summary
+            orderForm.reset();
+            orderItems.innerHTML = '';
+            totalPriceEl.textContent = '0.00';
+        }
+    }).catch(()=> alert('Network error. Please try again.'));
+});
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
