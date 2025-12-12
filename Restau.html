@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<title>ANNELA BISTRO</title>
+<title>Annela BISTRO</title>
 
 
 <!-- Google Fonts -->
@@ -430,11 +430,11 @@ footer {
                 <span class="category">Desserts</span>
                 <h3>Desserts & Sweets</h3>
                 <ul>
-                    <li>Brownies - ₱80</li>
-                    <li>Macarons - ₱60</li>
-                    <li>Mini Tarts - ₱90</li>
-                    <li>Fruit Parfaits - ₱120</li>
-                    <li>Chocolate Lava Cake - ₱150</li>
+                    <li>Brownies -- ₱80</li>
+                    <li>Macarons -- ₱60 each</li>
+                    <li>Mini Tarts -- ₱90</li>
+                    <li>Fruit Parfaits -- ₱120</li>
+                    <li>Chocolate Lava Cake -- ₱150</li>
                 </ul>
             </div>
         </div>
@@ -683,6 +683,18 @@ style="background:#fff; padding:25px; border-radius:12px; box-shadow:0 8px 25px 
         <p><strong>Total: ₱<span id="totalPrice">0</span></strong></p>
     </div>
 
+ <label for="o-size">Size / Add-ons</label>
+      <select id="o-size" name="size">
+        <option value="Not Applicable" selected>Not Applicable</option>
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+	  
+	   <label for="o-instructions">Special Instructions</label>
+      <textarea id="o-instructions" name="instructions" placeholder="Add-ons, sweetness, allergies, or delivery notes"></textarea>
+
+
     <label>Pickup or Delivery</label>
     <select id="method" name="method" required>
         <option value="Pickup">Pickup</option>
@@ -773,8 +785,6 @@ orderForm.addEventListener('submit', (e) => {
 
 </body>
 </html>
-
-
 
 
 
